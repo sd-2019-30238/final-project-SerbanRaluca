@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -68,18 +68,26 @@ body {
 .btn:hover {
 	opacity: 1;
 }
+
+.err {
+	color: red;
+}
 </style>
 <script>
 	function validate() {
 		var email = document.form.email.value;
 		var username = document.form.username.value;
+		var phone = document.form.phone.value;
 		var password = document.form.password.value;
 
-		 if (email == null || email == "") {
+		if (email == null || email == "") {
 			alert("Email can't be blank");
 			return false;
 		} else if (username == null || username == "") {
 			alert("Username can't be blank");
+			return false;
+		} else if (phone == null || phone == "") {
+			alert("Phone number can't be blank");
 			return false;
 		} else if (password.length < 6) {
 			alert("Password must be at least 6 characters long.");
@@ -91,8 +99,11 @@ body {
 </head>
 <body>
 	<div class="center">
-		<form action="register" method="post"
-		onsubmit="return validate()" style="max-width: 500px; margin: auto">
+		<div class=err>
+			<%=(request.getAttribute("errMessage") == null) ? "" : request.getAttribute("errMessage")%>
+		</div>
+		<form name="form" action="register" method="post"
+			onsubmit="return validate()" style="max-width: 500px; margin: auto">
 			<h2>Register Form</h2>
 			<div class="input-container">
 				<i class="fa fa-user icon"></i> <input class="input-field"

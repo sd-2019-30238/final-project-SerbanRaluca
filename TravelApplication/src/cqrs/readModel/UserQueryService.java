@@ -13,7 +13,7 @@ public class UserQueryService {
 	public static LoginCheckQueryResult loginCheck(String username,String password) {
 		ConnectionFactory.getInstance();
 		Connection conn=ConnectionFactory.getConnection();
-		String sqlQuery="SELECT * FROM user WHERE username=? and password=?";
+		String sqlQuery="SELECT * FROM travel.user WHERE username=? and password=?";
 		PreparedStatement statement;
 		String userRole=null;
 		LoginCheckQueryResult result;
@@ -42,7 +42,7 @@ public class UserQueryService {
 		}
 		return result;
 	}
-	
+
 	public static User findUser(Connection conn, String userName) throws SQLException {
 
 		String sql = "Select username, password  from user  where username = ? ";
@@ -58,6 +58,28 @@ public class UserQueryService {
 			user.setUsername(userName);
 			user.setPassword(password);
 			return user;
+		}
+		return null;
+	}
+
+	public static String checkNumber(String userName){
+
+		ConnectionFactory.getInstance();
+		Connection conn=ConnectionFactory.getConnection();
+		String sql = "Select number from travel.user  where username = ? ";
+
+
+		try {
+			PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setString(1, userName);
+			ResultSet rs = pstm.executeQuery();
+			if (rs.next()) {
+				String number= rs.getString("number");
+				return number;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		return null;
 	}

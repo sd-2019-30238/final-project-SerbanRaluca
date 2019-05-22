@@ -74,10 +74,8 @@ public class Register extends HttpServlet {
 			request.getRequestDispatcher("/register.jsp").forward(request, response);
 			return;
 		}
-
-		
+	
 		User user=new User(email,username,password,number);
-		System.out.println(user.getUsername());
 		EmailValidator validator1=new EmailValidator();
 		try {
 			validator1.validate(user);

@@ -4,6 +4,7 @@ import application.Mediator;
 import application.bean.User;
 import application.cqrs.commandHandlers.IHandler;
 import application.cqrs.commandHandlers.RegisterUserHandler;
+import application.cqrs.commandHandlers.UpdatePasswordHandler;
 
 public class UserWriteModel {
 	
@@ -17,7 +18,15 @@ public class UserWriteModel {
 	{
 		ICommand command=new UserRegisterCommand(user);
 		IHandler handler=new RegisterUserHandler();
-		mediator.registerHandler(handler);
+		mediator.registerHandler(command,handler);
+		return mediator.handle(command);
+	}
+	
+	public String updatePassword(String username,String password)
+	{
+		ICommand command=new UpdatePasswordCommand(username,password);
+		IHandler handler=new UpdatePasswordHandler();
+		mediator.registerHandler(command,handler);
 		return mediator.handle(command);
 	}
 

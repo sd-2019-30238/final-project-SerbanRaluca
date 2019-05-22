@@ -1,33 +1,35 @@
-package cqrs.writeModel;
+package application.cqrs.commandHandlers;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import application.cqrs.commandHandlers.IHandler;
+import cqrs.writeModel.ICommand;
+import cqrs.writeModel.UpdatePasswordCommand;
 import dataAccess.connection.ConnectionFactory;
 
-public class UpdateProductHandler implements IHandler {
+public class UpdatePasswordHandler implements IHandler {
 	
 	private String type;
 
-	public UpdateProductHandler() {
-		this.setType("updateProduct");
+	public UpdatePasswordHandler() {
+		this.setType("updatePassword");
 	}
 
 	@Override
-	public String handle(ICommand updateProductCommand) {
-		String code=((UpdateProductCommand) updateProductCommand).getCode();
-		int quantity=((UpdateProductCommand) updateProductCommand).getQuantity();
-		String sql = "UPDATE product SET quantity=? WHERE code=?";
+	public String handle(ICommand updatePasswordCommand) {
+		String password=((UpdatePasswordCommand) updatePasswordCommand).getPassword();
+		String username=((UpdatePasswordCommand) updatePasswordCommand).getUsername();
+		String sql = "UPDATE travel.user SET password=? WHERE username=?";
 		Connection con = null;
 		PreparedStatement preparedStatement = null;
 		try {
 			ConnectionFactory.getInstance();
 			con=ConnectionFactory.getConnection();
 			preparedStatement = con.prepareStatement(sql);
-			preparedStatement.setInt(1, quantity);
-			preparedStatement.setString(2, code);
+			preparedStatement.setString(1, password);
+			preparedStatement.setString(2, username);
 
 			int i= preparedStatement.executeUpdate();
 
@@ -47,5 +49,4 @@ public class UpdateProductHandler implements IHandler {
 	public void setType(String type) {
 		this.type = type;
 	}
-
 }

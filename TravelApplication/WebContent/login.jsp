@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -75,13 +75,17 @@ span.psw {
 		width: 100%;
 	}
 }
+
+.err {
+	color: red;
+}
 </style>
 </head>
 <body>
 
 	<div class="center">
 		<h2>Login Form</h2>
-		<form action="/action_page.php">
+		<form name="form" action="login" method="post">
 
 			<div class="container">
 				<label for="uname"><b>Username</b></label> <input type="text"
@@ -91,18 +95,21 @@ span.psw {
 
 				<button type="submit">Login</button>
 				<label> <input type="checkbox" checked="checked"
-					name="remember"> Remember me
+					name="rememberMe" value="Y" > Remember me
 				</label>
 			</div>
 
 			<div class="container" style="background-color: #f1f1f1">
 				<button type="button" class="cancelbtn">Cancel</button>
-				<span class="psw">Forgot <a href="#">password?</a></span>
+				<span class="psw">Forgot <a href="forgotpassword.jsp">password?</a></span>
 			</div>
 		</form>
 		<p>Don't have an account yet?</p>
 		<a href="register" class="button">SignUp</a>
-		
+		<div class=err>
+			<%=(request.getAttribute("errMessage") == null) ? ""
+					:request.getAttribute("errMessage") %>
+		</div>
 	</div>
 
 </body>

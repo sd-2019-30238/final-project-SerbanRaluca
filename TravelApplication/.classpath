@@ -14,5 +14,12 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="D:/Raluca/facultate/an 3/Documents/semestrul2/PS/mysql-connector-java-5.1.33.jar"/>
+	<classpathentry kind="lib" path="D:/Programe/javax.servlet.jar"/>
+	<classpathentry kind="lib" path="D:/Programe/apache-tomcat-7.0.94/bin/bootstrap.jar"/>
+	<classpathentry kind="lib" path="D:/Programe/apache-tomcat-7.0.94/bin/commons-daemon.jar"/>
+	<classpathentry kind="lib" path="D:/Programe/apache-tomcat-7.0.94/bin/tomcat-juli.jar"/>
+	<classpathentry kind="lib" path="D:/Programe/activation-1.1.jar"/>
+	<classpathentry kind="lib" path="D:/Programe/smtp-1.4.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Serban Raluca/Downloads/javax.mail.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

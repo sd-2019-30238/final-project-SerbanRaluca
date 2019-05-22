@@ -11,10 +11,7 @@ import dataAccess.connection.ConnectionFactory;
 
 public class RegisterUserHandler implements IHandler{
 
-	private String type;
-
 	public RegisterUserHandler() {
-		this.type="registerUser";
 	}
 
 
@@ -52,11 +49,6 @@ public class RegisterUserHandler implements IHandler{
 		}
 
 		return "Oops.. Something went wrong there..!";  // On failure, send a message from here.
-	}
-
-
-	public String getType() {
-		return type;
 	}
 
 }

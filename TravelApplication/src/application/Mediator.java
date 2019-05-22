@@ -1,29 +1,24 @@
 package application;
-import java.util.ArrayList;
-import java.util.List;
 
+import java.util.HashMap;
 import application.cqrs.commandHandlers.IHandler;
 import cqrs.writeModel.ICommand;
+
 public class Mediator {
 
-	public List<IHandler> handlers;
+	public HashMap<ICommand,IHandler> handlers;
 	
 	public Mediator() {
-		handlers=new ArrayList<IHandler>();
+		handlers=new HashMap<ICommand,IHandler>();
 	}
 	
-	public void registerHandler(IHandler handler) {
-		handlers.add(handler);
+	public void registerHandler(ICommand command,IHandler handler) {
+		handlers.put(command,handler);
 	}
 	
 	public String handle(ICommand command) {
-		String type=command.getType();
 		String result = null;
-		for(IHandler h:handlers) {
-			if(h.getType().equals(type)) {
-				result=h.handle(command);
-			}
-		}
+		result=handlers.get(command).handle(command);
 		return result;
 	}
 }

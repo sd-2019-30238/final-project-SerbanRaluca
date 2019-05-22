@@ -54,8 +54,9 @@ li a:hover:not (.active ){
 <body>
 
 	<ul>
-		<li><a class="active" href="home">Home</a></li>
-		<li><a href="login">Login</a></li>
+		<li><a class="active" href="<%=request.getContextPath()%>/">Home</a></li>
+		<li><a href="<%=request.getContextPath()%>/login">Login</a></li>
+		<li><a href="<%=request.getContextPath()%>/logout">Log out</a></li>
 		<li><a href="#contact">Contact</a></li>
 		<li><a href="#about">About</a></li>
 	</ul>
