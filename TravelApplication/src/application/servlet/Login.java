@@ -91,7 +91,6 @@ public class Login extends HttpServlet {
 		}else if(validate.equals("User_Role"))
 		{
 			System.out.println("User's Home");
-
 			HttpSession session ;//Creating a session
 			if(request.getSession(false) == null) {
 				session = request.getSession(true);

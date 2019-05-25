@@ -14,6 +14,7 @@
 	height: 600px;
 	position: relative;
 }
+
 .active {
 	background-color: #4CAF50;
 }
@@ -70,14 +71,17 @@ body {
 					class="icon-bar"></span>
 			</button>
 			<a class="active" href="<%=request.getContextPath()%>/User">Home</a>
-			<a href="#news">Places</a> <a href="#contact">Contact</a> <a
-				href="about.jsp">About</a> <a
-				href="<%=request.getContextPath()%>/logout">Log out</a>
+			<a href="<%=request.getContextPath()%>/Destinations">Destinations</a> 
+			<a href="contact.jsp">Contact</a> 
+			<a href="about.jsp">About</a> 
+			<a href="<%=request.getContextPath()%>/logout">Log out</a> 
+			<a href="#news" style="float:right">Welcome-${loginedUser.username}</a>
 		</div>
 		<div class="center">
 			<p>Plan a trip to your favorite place</p>
-			<h2>Taxa Adventure</h2>
+			<h2>Taxa Adventure</h2> 
 		</div>
 	</div>
+	
 </body>
 </html>

@@ -7,7 +7,7 @@
 <title>Login</title>
 <style>
 html {
-	background: url(images/login.jpg);
+	background: url(images/login.jpg); 
 	background-size: cover;
 }
 

@@ -6,7 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Travel Adventure</title>
 <link rel="icon" href="img/Fevicon.png" type="image/png">
-
 <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
 <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
 <link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
@@ -25,7 +24,6 @@
 	href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
 <link rel="stylesheet" type="text/css"
 	href="plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 
 <style>
@@ -78,16 +76,12 @@ li
 
 
 
-
  
 
 
 
 
-
 a
-
-
 
 
 
@@ -105,16 +99,12 @@ a
 
 
 
-
-
 :not
 
 
 
 
-
  
-
 
 
 
@@ -125,9 +115,7 @@ a
 
 
 
-
  
-
 
 
 
@@ -142,10 +130,7 @@ background-color
 
 
 
-
-
 :
-
 
 
 
@@ -155,10 +140,7 @@ background-color
 
 
 
-
 #111
-
-
 
 
 
@@ -208,6 +190,23 @@ body {
 .topnav a.active {
 	background-color: #4CAF50;
 	color: white;
+}
+/* Create two equal columns that floats next to each other */
+.column {
+	float: left;
+	width: 50%;
+	padding: 10px;
+}
+
+.column img {
+	margin-top: 12px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
 }
 </style>
 </head>
@@ -283,7 +282,10 @@ body {
 	</div>
 	<!--================ End CTA Area =================-->
 	<!-- Destinations -->
-
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
 	<div class="destinations" id="destinations">
 		<div class="container">
 			<div class="row">
@@ -293,96 +295,99 @@ body {
 					</div>
 				</div>
 			</div>
-			<div class="row destinations_row">
-				<div class="col">
-					<div class="destinations_container item_grid">
+			<div class="row">
+				<div class="column">
 
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="images/destination_1.jpg" alt="">
-								<div class="spec_offer text-center">
-									<a href="#">Special Offer</a>
-								</div>
-							</div>
-							<div class="destination_content">
-								<div class="destination_title">
-									<a href="destinations.html">Bali</a>
-								</div>
-								<div class="destination_price">From $679</div>
+					<!-- Destination -->
+					<div class="destination item">
+						<div class="destination_image">
+							<img src="images/destination_1.jpg" alt="" style="width: 80%">
+							<div class="spec_offer text-center">
+								<a href="#">Special Offer</a>
 							</div>
 						</div>
-
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="images/destination_2.jpg" alt="">
+						<div class="destination_content">
+							<div class="destination_title">
+								<a href="destinations.html">Bali</a>
 							</div>
-							<div class="destination_content">
-								<div class="destination_title">
-									<a href="destinations.html">Indonesia</a>
-								</div>
-								<div class="destination_price">From $679</div>
-							</div>
+							<div class="destination_price">From $679</div>
 						</div>
-
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="images/destination_3.jpg" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title">
-									<a href="destinations.html">San Francisco</a>
-								</div>
-								<div class="destination_price">From $679</div>
-							</div>
-						</div>
-
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="images/destination_4.jpg" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title">
-									<a href="destinations.html">Paris</a>
-								</div>
-								<div class="destination_price">From $679</div>
-							</div>
-						</div>
-
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="images/destination_5.jpg" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title">
-									<a href="destinations.html">Phi Phi Island</a>
-								</div>
-								<div class="destination_price">From $679</div>
-							</div>
-						</div>
-
-						<!-- Destination -->
-						<div class="destination item">
-							<div class="destination_image">
-								<img src="images/destination_6.jpg" alt="">
-							</div>
-							<div class="destination_content">
-								<div class="destination_title">
-									<a href="destinations.html">Mykonos</a>
-								</div>
-								<div class="destination_price">From $679</div>
-							</div>
-						</div>
-
 					</div>
+
+					<!-- Destination -->
+					<div class="destination item">
+						<div class="destination_image">
+							<img src="images/destination_2.jpg" alt="" style="width: 80%">
+						</div>
+						<div class="destination_content">
+							<div class="destination_title">
+								<a href="destinations.html">Indonesia</a>
+							</div>
+							<div class="destination_price">From $679</div>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<!-- Destination -->
+					<div class="destination item">
+						<div class="destination_image">
+							<img src="images/destination_3.jpg" alt="" style="width: 80%">
+						</div>
+						<div class="destination_content">
+							<div class="destination_title">
+								<a href="destinations.html">San Francisco</a>
+							</div>
+							<div class="destination_price">From $679</div>
+						</div>
+					</div>
+
+					<!-- Destination -->
+					<div class="destination item">
+						<div class="destination_image">
+							<img src="images/destination_4.jpg" alt="" style="width: 80%">
+						</div>
+						<div class="destination_content">
+							<div class="destination_title">
+								<a href="destinations.html">Paris</a>
+							</div>
+							<div class="destination_price">From $679</div>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<!-- Destination -->
+					<div class="destination item">
+						<div class="destination_image">
+							<img src="images/destination_5.jpg" alt="" style="width: 80%">
+						</div>
+						<div class="destination_content">
+							<div class="destination_title">
+								<a href="destinations.html">Phi Phi Island</a>
+							</div>
+							<div class="destination_price">From $679</div>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+
+					<!-- Destination -->
+					<div class="destination item">
+						<div class="destination_image">
+							<img src="images/destination_6.jpg" alt="" style="width: 80%">
+						</div>
+						<div class="destination_content">
+							<div class="destination_title">
+								<a href="destinations.html">Mykonos</a>
+							</div>
+							<div class="destination_price">From $679</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>
 	</div>
+	<jsp:include page="footer.jsp"></jsp:include>
 	<script src="styles/bootstrap4/popper.js"></script>
 	<script src="styles/bootstrap4/bootstrap.min.js"></script>
 	<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>

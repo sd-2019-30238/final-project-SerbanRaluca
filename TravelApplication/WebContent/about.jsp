@@ -5,9 +5,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <!-- Bootstrap core CSS -->
-<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/bootstrap1.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="styles/about.css">
-<link rel="stylesheet" type="text/css" href="styles/about_responsive.css">
+<link rel="stylesheet" type="text/css"
+	href="styles/bootstrap4/bootstrap.min.css">
+	<!-- main css -->
+	<link rel="stylesheet" href="css/style1.css">
+	<link rel="stylesheet" href="vendors/linericon/style.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+
+	<link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
 <style>
 .header {
 	background: url(images/banner.jpg);
@@ -85,7 +94,7 @@ body {
 					class="icon-bar"></span>
 			</button>
 			<a class="active" href="<%=request.getContextPath()%>/User">Home</a>
-			<a href="#news">Places</a> <a href="#contact">Contact</a> <a
+			<a href="<%=request.getContextPath()%>/Destinations">Destinations</a><a href="contact.jsp">Contact</a> <a
 				href="about.jsp">About</a> <a
 				href="<%=request.getContextPath()%>/logout">Log out</a>
 		</div>
@@ -99,13 +108,13 @@ body {
 		<div class="light-wrapper">
 			<div class="row">
 				<div class="text-center">
-					<h2 class="main-title">About our company</h2>
+					<h3 class="main-title">  About our company</h3>
 					<hr>
 				</div>
 				<div class="divide50"></div>
 				<div class="col-sm-4">
 					<figure>
-						<img src="images/office.jpg" alt="" style="width: 100%;">
+						<img src="images/office.jpg" alt="" style="width: 80%;">
 					</figure>
 				</div>
 				<div class="col-sm-8">

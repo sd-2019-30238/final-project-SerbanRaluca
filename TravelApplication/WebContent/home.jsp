@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Travel Adventure</title>
+<title>Taxa Adventure</title>
 <style>
 .header {
 	background: url(images/home.png);
@@ -77,7 +77,7 @@ background-color
 
 		<div class="center">
 			<p>Plan a trip to your favorite place</p>
-			<h2>Travel Adventure</h2>
+			<h2>Taxa Adventure</h2>
 		</div>
 	</div>
 </body>
