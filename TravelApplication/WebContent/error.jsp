@@ -6,10 +6,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Error</title>
 </head>
-<body bgcolor=#99FF99>
-	<div align="center">
-		You are already logged in! <br> <a
-			href="<%=request.getContextPath()%>/logout">Logout</a>
-	</div>
+<body>
 </body>
 </html>

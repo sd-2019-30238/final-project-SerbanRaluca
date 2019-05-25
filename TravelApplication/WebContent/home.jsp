@@ -7,7 +7,7 @@
 <title>Travel Adventure</title>
 <style>
 .header {
-	background: url(images/home.jpg);
+	background: url(images/home.png);
 	background-size: cover;
 	height: 600px;
 	position: relative;
@@ -33,10 +33,24 @@ li a {
 	text-decoration: none;
 }
 
-li a:hover:not (.active ){
-	background-color: #111;
-}
+li
+ 
+a
+:hover
+:not
+ 
+(
+.active
+ 
+){
+background-color
+:
+ 
+#111
+;
 
+
+}
 .active {
 	background-color: #4CAF50;
 }
@@ -52,15 +66,15 @@ li a:hover:not (.active ){
 
 </head>
 <body>
-
-	<ul>
-		<li><a class="active" href="<%=request.getContextPath()%>/">Home</a></li>
-		<li><a href="<%=request.getContextPath()%>/login">Login</a></li>
-		<li><a href="<%=request.getContextPath()%>/logout">Log out</a></li>
-		<li><a href="#contact">Contact</a></li>
-		<li><a href="#about">About</a></li>
-	</ul>
 	<div class="header">
+		<ul>
+			<li><a class="active" href="<%=request.getContextPath()%>/home">Home</a></li>
+			<li><a href="<%=request.getContextPath()%>/login">Login</a></li>
+			<li><a href="<%=request.getContextPath()%>/logout">Log out</a></li>
+			<li><a href="#contact">Contact</a></li>
+			<li><a href="about.jsp">About</a></li>
+		</ul>
+
 		<div class="center">
 			<p>Plan a trip to your favorite place</p>
 			<h2>Travel Adventure</h2>

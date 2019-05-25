@@ -24,16 +24,18 @@ public class Logout extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(false); //Fetch session object
-
-		if(session!=null) //If session is not null
-		{
-			session.invalidate(); //removes all session attributes bound to the session
+		    HttpSession session = request.getSession(); //Fetch session object
+		    if(session.getAttribute("loginedUser")!=null) {
+			session.removeAttribute("loginedUser");
+			System.out.println(session.getAttribute("loginedUser"));
 			request.setAttribute("errMessage", "You have logged out successfully");
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.jsp");
 			requestDispatcher.forward(request, response);
 			System.out.println("Logged out");
-		}
+		    }else {
+		    	RequestDispatcher requestDispatcher = request.getRequestDispatcher("/login.jsp");
+				requestDispatcher.forward(request, response);
+		    }
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -31,11 +31,14 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//RequestDispatcher dispatcher= this.getServletContext().getRequestDispatcher("/login.jsp");
+		//dispatcher.forward(request, response);
+		
 		HttpSession session ;
 		session=request.getSession();
 		if(MyUtils.getLoginedUser(session)==null) {
 			RequestDispatcher dispatcher= this.getServletContext().getRequestDispatcher("/login.jsp");
-            System.out.println("da");
+
 			dispatcher.forward(request, response);
 		}else {
 			RequestDispatcher dispatcher= this.getServletContext().getRequestDispatcher("/error.jsp");
