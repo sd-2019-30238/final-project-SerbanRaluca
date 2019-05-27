@@ -29,12 +29,6 @@ public class DestinationQueryService {
 				double price = rs.getDouble("price");
 				int days= rs.getInt("days");
 				Destination destination = new Destination(id, city,country, photo, price,days);
-				destination.setCity(city);
-				destination.setCountry(country);
-				destination.setDays(days);
-				destination.setId(id);
-				destination.setPhoto(photo);
-				destination.setPrice(price);
 				list.add(destination);	
 			}
 		} catch (SQLException e) {
@@ -42,5 +36,34 @@ public class DestinationQueryService {
 			e.printStackTrace();
 		}
 		return list;	
+	}
+	
+	public static Destination findByName(String name) throws SQLException {
+
+		String sql = "Select id,city,country,photo,price,days  from travel.destinations  where city = ? ";
+		ConnectionFactory.getInstance();
+		Connection conn=ConnectionFactory.getConnection();
+		PreparedStatement pstm = conn.prepareStatement(sql);
+		pstm.setString(1,name);
+
+		ResultSet rs = pstm.executeQuery();
+
+		if (rs.next()) {
+			Destination dst = new Destination();
+			String id = rs.getString("id");
+			String city = rs.getString("city");
+			String country = rs.getString("country");
+			String photo = rs.getString("photo");
+			double price = rs.getDouble("price");
+			int days= rs.getInt("days");
+			dst.setCity(city);
+			dst.setCountry(country);
+			dst.setDays(days);
+			dst.setId(id);
+			dst.setPhoto(photo);
+			dst.setPrice(price);
+			return dst;
+		}
+		return null;
 	}
 }

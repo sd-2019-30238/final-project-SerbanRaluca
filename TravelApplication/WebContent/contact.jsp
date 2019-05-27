@@ -6,24 +6,97 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Contact</title>
 <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
-  <link rel="stylesheet" href="vendors/linericon/style.css">
-  <link rel="stylesheet" href="vendors/owl-carousel/owl.theme.default.min.css">
-  <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/magnific-popup.css">
-  <link rel="stylesheet" href="vendors/flat-icon/font/flaticon.css">
-  <link rel="stylesheet" href="vendors/nice-select/nice-select.css">
+<link rel="stylesheet" href="vendors/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="vendors/themify-icons/themify-icons.css">
+<link rel="stylesheet" href="vendors/linericon/style.css">
+<link rel="stylesheet"
+	href="vendors/owl-carousel/owl.theme.default.min.css">
+<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet" href="vendors/flat-icon/font/flaticon.css">
+<link rel="stylesheet" href="vendors/nice-select/nice-select.css">
+<style>
+.header {
+	background: url(images/banner.jpg);
+	background-size: cover;
+	height: 300px;
+	position: relative;
+}
+
+.active {
+	background-color: #4CAF50;
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 18px;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+	overflow: hidden;
+	background-color: #333;
+}
+
+.topnav a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 25px;
+}
+
+.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+.topnav a.active {
+	background-color: #4CAF50;
+	color: white;
+}
+</style>
 </head>
 <body>
-	<jsp:include page="_header.jsp"></jsp:include>
+
+	<div class="header">
+		<div class="topnav">
+			<a class="navbar-brand logo_h"
+				href="<%=request.getContextPath()%>/User"><img
+				src="images/logo.png" alt=""></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a href="<%=request.getContextPath()%>/User">Home</a> <a
+				href="<%=request.getContextPath()%>/Destinations">Destinations</a> <a
+				class="active" href="contact.jsp">Contact</a> <a href="about.jsp">About</a>
+			<a href="<%=request.getContextPath()%>/logout">Log out</a>
+		</div>
+		<div class="center">
+			<p>Plan a trip to your favorite place</p>
+			<h2>Taxa Adventure</h2>
+		</div>
+	</div>
+
 	<div class="row">
 		<div class="col-12">
 			<h2 class="contact-title">Get in Touch</h2>
 		</div>
 		<div class="col-lg-8">
-			<form class="form-contact contact_form" action="#"
-				method="post" id="contactForm" novalidate="novalidate">
+			<form class="form-contact contact_form" action="#" method="post"
+				id="contactForm" novalidate="novalidate">
 				<div class="row">
 					<div class="col-12">
 						<div class="form-group">

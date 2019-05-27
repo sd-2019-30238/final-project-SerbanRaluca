@@ -7,6 +7,10 @@ public class Destination {
 	private double price;
 	private String photo;
 	private int days;
+	
+	public Destination() {
+		
+	}
 
 	public Destination(String id,String city,String country,String photo,double price,int days) {
 		this.id=id;

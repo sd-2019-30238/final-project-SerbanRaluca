@@ -271,7 +271,7 @@ body {
 							cruises worldwide, anywhere in the world you want to go. Due to
 							our business volume and industry experience, we are able to bring
 							value added services to our clients.</p>
-						<a href="#" class="button">Book a Trip</a>
+						<a href="<%=request.getContextPath()%>/Destinations" class="button">Book a Trip</a>
 					</div>
 					<div class="offset-lg-1 col-lg-6">
 						<img class="cta-img img-fluid" src="images/cta-img.png" alt="">

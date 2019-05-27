@@ -75,9 +75,45 @@ body {
 	padding: 15px 0;
 	font-size: 20px;
 }
+
+.filterDiv {
+  float: left;
+  background-color: #2196F3;
+  color: #ffffff;
+  text-align: center;
+  margin: 2px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: gray;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #4CAF50;
+  color: white;
+}
 </style>
 </head>
-<body>
+<body onload="filterSelection('all')">
 	<div class="header">
 		<div class="topnav">
 			<a class="navbar-brand logo_h"
@@ -90,8 +126,8 @@ body {
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="active" href="<%=request.getContextPath()%>/User">Home</a>
-			<a href="<%=request.getContextPath()%>/Destinations">Destinations</a> 
+			<a href="<%=request.getContextPath()%>/User">Home</a>
+			<a class="active" href="<%=request.getContextPath()%>/Destinations">Destinations</a> 
 			<a href="contact.jsp">Contact</a>
 			<a href="about.jsp">About</a> <a
 				href="<%=request.getContextPath()%>/logout">Log out</a> <a
@@ -102,6 +138,76 @@ body {
 			<h2>Taxa Adventure</h2>
 		</div>
 	</div>
+	
+	<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')" > Show all</button>
+  <button class="btn" onclick="filterSelection('Belgium')">Belgium</button>
+  <button class="btn" onclick="filterSelection('Brazil')">Brazil</button>
+  <button class="btn" onclick="filterSelection('China')"> China</button>
+  <button class="btn" onclick="filterSelection('Cyprus')"> Cyprus</button>
+  <button class="btn" onclick="filterSelection('Denmark')"> Denmark</button>
+  <button class="btn" onclick="filterSelection('Egypt')">Egypt</button>
+  <button class="btn" onclick="filterSelection('France')">France</button>
+  <button class="btn" onclick="filterSelection('Greece')">Greece</button>
+  <button class="btn" onclick="filterSelection('Indonesia')">Indonesia</button>
+  <button class="btn" onclick="filterSelection('Israel')">Israel</button>
+  <button class="btn" onclick="filterSelection('Italy')">Italy</button>
+  <button class="btn" onclick="filterSelection('Japan')">Japan</button>
+   <button class="btn" onclick="filterSelection('Peru')">Peru</button>
+  <button class="btn" onclick="filterSelection('Netherlands')">Netherlands</button>
+  <button class="btn" onclick="filterSelection('New Zealand')">New Zealand</button>
+  <button class="btn" onclick="filterSelection('Portugal')">Portugal</button>
+  <button class="btn" onclick="filterSelection('Spain')">Spain</button>
+  <button class="btn" onclick="filterSelection('Thailand')">Thailand</button>
+  <button class="btn" onclick="filterSelection('Turkey')">Turkey</button>
+  <button class="btn" onclick="filterSelection('United Kingdom')">United Kingdom</button>
+</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+	
 	<div class="destinations" id="destinations">
 		<div class="container">
 			<div class="row">
@@ -114,12 +220,12 @@ body {
 			</div>
 			<div class="grid-container">
 				<c:forEach var="destination" items="${destinations }">
-					<div>
+					<div class="filterDiv ${destination.country}">
 						<img src="${pageContext.request.contextPath }/images/destinations/${destination.country}/${destination.city}/${destination.photo}.jpg" alt="" style="width: 80%">
 						<div class="destination_title">
-							<a href="#">${destination.photo}</a>
+							<a href="<%=request.getContextPath()%>/DestinationPage?&name=${destination.photo}">${destination.photo}</a>
 						</div>
-						<div class="destination_price">Price:${destination.price}</div>
+						<div class="destination_price"><p style="color:black;"> Price:${destination.price}</p></div>
 					</div>
 				</c:forEach>
 			</div>

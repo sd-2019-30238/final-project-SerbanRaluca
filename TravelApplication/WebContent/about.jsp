@@ -93,9 +93,9 @@ body {
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="active" href="<%=request.getContextPath()%>/User">Home</a>
+			<a href="<%=request.getContextPath()%>/User">Home</a>
 			<a href="<%=request.getContextPath()%>/Destinations">Destinations</a><a href="contact.jsp">Contact</a> <a
-				href="about.jsp">About</a> <a
+				class="active" href="about.jsp">About</a> <a
 				href="<%=request.getContextPath()%>/logout">Log out</a>
 		</div>
 		<div class="left">
