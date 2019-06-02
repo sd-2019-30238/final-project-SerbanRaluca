@@ -66,4 +66,32 @@ public class DestinationQueryService {
 		}
 		return null;
 	}
+	
+	public static Destination findById(String id) throws SQLException {
+
+		String sql = "Select id,city,country,photo,price,days  from travel.destinations  where id = ? ";
+		ConnectionFactory.getInstance();
+		Connection conn=ConnectionFactory.getConnection();
+		PreparedStatement pstm = conn.prepareStatement(sql);
+		pstm.setString(1,id);
+
+		ResultSet rs = pstm.executeQuery();
+
+		if (rs.next()) {
+			Destination dst = new Destination();
+			String city = rs.getString("city");
+			String country = rs.getString("country");
+			String photo = rs.getString("photo");
+			double price = rs.getDouble("price");
+			int days= rs.getInt("days");
+			dst.setCity(city);
+			dst.setCountry(country);
+			dst.setDays(days);
+			dst.setId(id);
+			dst.setPhoto(photo);
+			dst.setPrice(price);
+			return dst;
+		}
+		return null;
+	}
 }

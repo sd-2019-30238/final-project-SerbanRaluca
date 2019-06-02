@@ -34,16 +34,15 @@
 }
 
 .submit-btn {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
 }
-
 </style>
 </head>
 <body>
@@ -55,58 +54,57 @@
 						<div class="row">
 							<div class="booking-form">
 								<div class="form-header">
+									<h1><%=request.getAttribute("hotelName")%></h1>
 									<h1>Make your reservation</h1>
 								</div>
-								<form>
+								<form name="form" action="HotelBooking" method="post">
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<span class="form-label" style="color:blue;">Check In</span> <input
-													class="form-control" type="date" required>
+												<span class="form-label" style="color: blue;">Email:</span>
+												<input class="form-control" name="email" type="text"
+													required>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<span class="form-label" style="color: blue;">Check
+													in</span> <input class="form-control" name="checkin" type="date"
+													required>
 											</div>
 											<span class="in-out hidden-xs hidden-sm">&#8652;</span>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<span class="form-label" style="color:blue;">Check out</span> <input
-													class="form-control" type="date" required>
+												<span class="form-label" style="color: blue;">Check
+													out</span> <input class="form-control" name="checkout" type="date"
+													required>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-3">
 											<div class="form-group">
-												<span class="form-label" style="color:blue;">No of rooms</span> <select
-													class="form-control">
+												<span class="form-label" style="color: blue;">No of
+													rooms</span> <select class="form-control" name="rooms">
 													<option>1</option>
 													<option>2</option>
 													<option>3</option>
 												</select> <span class="select-arrow"></span>
 											</div>
 										</div>
-										<div class="col-md-3">
+										<div class="col-md-6">
 											<div class="form-group">
-												<span class="form-label" style="color:blue;">Adults</span> <select
-													class="form-control">
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-												</select> <span class="select-arrow"></span>
-											</div>
-										</div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<span class="form-label" style="color:blue;">Children</span> <select
-													class="form-control">
-													<option>0</option>
-													<option>1</option>
-													<option>2</option>
-												</select> <span class="select-arrow"></span>
+												<span class="form-label" style="color: blue;">Phone:</span>
+												<input class="form-control" name="phone" type="text"
+													required>
 											</div>
 										</div>
 										<div class="col-md-3">
 											<div class="form-btn">
-												<button class="submit-btn">Check availability</button>
+												<button class="submit-btn" type="submit">Check availability</button>
 											</div>
 										</div>
 									</div>

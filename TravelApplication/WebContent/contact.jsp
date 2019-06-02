@@ -95,8 +95,8 @@ body {
 			<h2 class="contact-title">Get in Touch</h2>
 		</div>
 		<div class="col-lg-8">
-			<form class="form-contact contact_form" action="#" method="post"
-				id="contactForm" novalidate="novalidate">
+			<form class="form-contact contact_form" action="contact.jsp"
+				method="post" id="contactForm" novalidate="novalidate">
 				<div class="row">
 					<div class="col-12">
 						<div class="form-group">
@@ -124,7 +124,7 @@ body {
 					</div>
 				</div>
 				<div class="form-group mt-3">
-					<button type="submit" class="button button-contactForm">Send
+					<button type="submit" class="button button-contactForm" onclick="myFunction()">Send
 						Message</button>
 				</div>
 			</form>
@@ -143,22 +143,23 @@ body {
 			<div class="media contact-info">
 				<span class="contact-info__icon"><i class="ti-tablet"></i></span>
 				<div class="media-body">
-					<h3>
-						<a href="tel:454545654">00 (440) 9865 562</a>
-					</h3>
+					<h3>00 (440) 9865 562</h3>
 					<p>Mon to Fri 9am to 6pm</p>
 				</div>
 			</div>
 			<div class="media contact-info">
 				<span class="contact-info__icon"><i class="ti-email"></i></span>
 				<div class="media-body">
-					<h3>
-						<a href="#">taxa_adventure@mail.com</a>
-					</h3>
+					<h3>taxa_adventure@mail.com</h3>
 					<p>Send us your message anytime!</p>
 				</div>
 			</div>
 		</div>
 	</div>
+	<script>
+function myFunction() {
+  alert("Your message has been sent!");
+}
+</script>
 </body>
 </html>

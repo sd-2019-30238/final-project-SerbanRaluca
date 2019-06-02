@@ -71,8 +71,6 @@ background-color
 			<li><a class="active" href="<%=request.getContextPath()%>/home">Home</a></li>
 			<li><a href="<%=request.getContextPath()%>/login">Login</a></li>
 			<li><a href="<%=request.getContextPath()%>/logout">Log out</a></li>
-			<li><a href="#contact">Contact</a></li>
-			<li><a href="about.jsp">About</a></li>
 		</ul>
 
 		<div class="center">

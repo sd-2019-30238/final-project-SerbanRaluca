@@ -6,16 +6,23 @@ public class Hotel {
 	private String name;
 	private double price;
 	private int rooms;
+	private String region;
 	
 	
-	public Hotel(String id,String name,double price,int rooms ) {
+	public Hotel(String id,String name,double price,int rooms, String region ) {
 		this.idHotel=id;
 		this.name=name;
 		this.price=price;
 		this.rooms=rooms;
+		this.region=region;
 	}
 	
 	
+	public Hotel() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public String getIdHotel() {
 		return idHotel;
 	}
@@ -39,5 +46,15 @@ public class Hotel {
 	}
 	public void setRooms(int rooms) {
 		this.rooms = rooms;
+	}
+
+
+	public String getRegion() {
+		return region;
+	}
+
+
+	public void setRegion(String region) {
+		this.region = region;
 	}
 }

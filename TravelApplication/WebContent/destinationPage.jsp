@@ -128,9 +128,9 @@ body {
 				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="active" href="<%=request.getContextPath()%>/User">Home</a>
+			<a  href="<%=request.getContextPath()%>/User">Home</a>
 			<a href="<%=request.getContextPath()%>/Destinations">Destinations</a>
-			<a href="#">Hotels</a> <a href="contact.jsp">Contact</a> <a
+		    <a href="contact.jsp">Contact</a> <a
 				href="about.jsp">About</a> <a
 				href="<%=request.getContextPath()%>/logout">Log out</a>
 		</div>
@@ -154,7 +154,7 @@ body {
 					src="${pageContext.request.contextPath }/images/destinations/${country}/${city}/${hotel.name}.jpg"
 					alt="${hotel.name}<br>$${hotel.price}/night" style="width: 80%" align="middle"
 					onclick="myFunction(this);"> <br></br> <a
-					href="hotelBooking.jsp">Book now!</a>
+					href="<%=request.getContextPath()%>/HotelBooking?&name=${hotel.name}&id=${hotel.idHotel}">Book now!</a>
 			</div>
 		</c:forEach>
 	</div>
