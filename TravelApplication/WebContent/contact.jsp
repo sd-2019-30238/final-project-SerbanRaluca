@@ -124,8 +124,8 @@ body {
 					</div>
 				</div>
 				<div class="form-group mt-3">
-					<button type="submit" class="button button-contactForm" onclick="myFunction()">Send
-						Message</button>
+					<button type="submit" class="button button-contactForm"
+						onclick="myFunction()">Send Message</button>
 				</div>
 			</form>
 
@@ -157,9 +157,9 @@ body {
 		</div>
 	</div>
 	<script>
-function myFunction() {
-  alert("Your message has been sent!");
-}
-</script>
+		function myFunction() {
+			alert("Your message has been sent!");
+		}
+	</script>
 </body>
 </html>

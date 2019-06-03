@@ -26,9 +26,15 @@ body, h1, h2, h3, h4, h5, h6 {
 		<p>Join our newsletter.</p>
 		<label>E-mail</label> <input class="w3-input w3-border" type="text"
 			placeholder="Your Email address">
-		<button type="button" class="w3-button w3-red w3-margin-top">Subscribe</button>
+		<button type="button" class="w3-button w3-red w3-margin-top"
+			onclick="myFunction()">Subscribe</button>
 	</div>
 
+	<script>
+		function myFunction() {
+			alert("Thank you!We'll send you our best offers!");
+		}
+	</script>
 	<div class="w3-container" id="contact">
 		<h2>Contact</h2>
 		<p>If you have any questions, do not hesitate to ask them.</p>
@@ -37,7 +43,7 @@ body, h1, h2, h3, h4, h5, h6 {
 			style="width: 30px"></i> Phone:00 (440) 9865 562<br> <i
 			class="fa fa-envelope w3-text-red" style="width: 30px"> </i> Email:
 		taxa_adventure@mail.com<br>
-		<form action="/action_page.php" target="_blank">
+		<form action="<%=request.getContextPath()%>/User" target="_blank">
 			<p>
 				<input class="w3-input w3-padding-16 w3-border" type="text"
 					placeholder="Name" required name="Name">
@@ -51,11 +57,16 @@ body, h1, h2, h3, h4, h5, h6 {
 					placeholder="Message" required name="Message">
 			</p>
 			<p>
-				<button class="w3-button w3-black w3-padding-large" type="submit">SEND
+				<button class="w3-button w3-black w3-padding-large" type="submit" onclick="myfunction()">SEND
 					MESSAGE</button>
 			</p>
 		</form>
 	</div>
+	<script>
+		function myfunction() {
+			alert("Your message has been sent!");
+		}
+	</script>
 
 	<footer class="w3-padding-32 w3-black w3-center w3-margin-top">
 		<h5>Find Us On</h5>

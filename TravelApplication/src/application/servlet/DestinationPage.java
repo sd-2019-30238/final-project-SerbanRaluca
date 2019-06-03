@@ -46,6 +46,7 @@ public class DestinationPage extends HttpServlet {
 		}
 		try {
 			Destination destination=DestinationQueryService.findByName(city);
+			request.getSession().setAttribute("city",destination.getCity());
 			List<Hotel> hotels=HotelQueryService.getHotels(destination.getId());
 			request.setAttribute("hotels",hotels);
 			request.setAttribute("city", destination.getCity());

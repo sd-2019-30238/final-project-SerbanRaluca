@@ -308,7 +308,7 @@ body {
 						</div>
 						<div class="destination_content">
 							<div class="destination_title">
-								<a href="destinations.html">Bali</a>
+								<p>Bali</p>
 							</div>
 							<div class="destination_price">From $679</div>
 						</div>
@@ -321,7 +321,7 @@ body {
 						</div>
 						<div class="destination_content">
 							<div class="destination_title">
-								<a href="destinations.html">Indonesia</a>
+								<p>Indonesia</p>
 							</div>
 							<div class="destination_price">From $679</div>
 						</div>
@@ -335,7 +335,7 @@ body {
 						</div>
 						<div class="destination_content">
 							<div class="destination_title">
-								<a href="destinations.html">San Francisco</a>
+								<p>San Francisco</p>
 							</div>
 							<div class="destination_price">From $679</div>
 						</div>
@@ -348,7 +348,7 @@ body {
 						</div>
 						<div class="destination_content">
 							<div class="destination_title">
-								<a href="destinations.html">Paris</a>
+								<p>Paris</p>
 							</div>
 							<div class="destination_price">From $679</div>
 						</div>
@@ -362,7 +362,7 @@ body {
 						</div>
 						<div class="destination_content">
 							<div class="destination_title">
-								<a href="destinations.html">Phi Phi Island</a>
+								<p>Phi Phi Island</p>
 							</div>
 							<div class="destination_price">From $679</div>
 						</div>
@@ -377,7 +377,7 @@ body {
 						</div>
 						<div class="destination_content">
 							<div class="destination_title">
-								<a href="destinations.html">Mykonos</a>
+								<p>Mykonos</p>
 							</div>
 							<div class="destination_price">From $679</div>
 						</div>

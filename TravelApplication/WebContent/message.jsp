@@ -27,7 +27,7 @@
 		<div class=center>
 			<p>Your rezervation is done!Thank you for using our services!</p>
 			<p>Please book a flight to finish your traveling plan!</p>
-			<a href="<%=request.getContextPath()%>/BookFlight">Book flight</a>
+			<a href="<%=request.getContextPath()%>/BookFlight?&city=<%=request.getAttribute("city")%>">Book flight</a>
 		</div>
 	</div>
 </body>
